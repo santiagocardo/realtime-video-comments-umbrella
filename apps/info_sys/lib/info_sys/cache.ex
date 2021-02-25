@@ -20,8 +20,6 @@ defmodule InfoSys.Cache do
     GenServer.start_link(__MODULE__, opts, name: opts[:name])
   end
 
-  @clear_interval :timer.seconds(60)
-
   def init(opts) do
     state = %{
       interval: opts[:clear_interval] || @clear_interval,
